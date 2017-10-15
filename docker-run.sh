@@ -1,5 +1,5 @@
 #!/bin/bash
-CONTAINER_NAME="container-0"
+CONTAINER_NAME="con"
 IMG_NAME="ump-image"
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -20,4 +20,4 @@ while [ $# -gt 0 ]; do
 done
 
 
-docker run -itd --network=host --name=$CONTAINER_NAME $IMG_NAME --env=$env
+docker run -it --network=host --name=$CONTAINER_NAME $IMG_NAME --env=$env
