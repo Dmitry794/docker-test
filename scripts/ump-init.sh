@@ -22,13 +22,14 @@ if [ -z "$container" ]; then
 case "$env" in
 	DEV)
 		echo -n "ump init: env [${env}]..."
-		sleep 3
+		sleep 2
 		echo "OK"
 		;;
 	QA)
 		echo -n "ump init: env [${env}]..."
 		sleep 3
 		echo "OK"
+               
      		;;
 	*)
 		echo -n "creating new env..."
@@ -36,6 +37,7 @@ case "$env" in
 		echo "OK"
 		;;
 esac
+/scripts/init-security.sh
 echo "export container=1" >> ~/.bashrc
 . ~/.bashrc
 fi
